@@ -17,7 +17,7 @@ const Home: NextPage = () => {
       </div>
       <h1 className="bg-gray-400 text-yellow-200">알에스팀2!</h1>
 
-      <a href="/sh">sh</a>
+      {/* <a href="/sh">sh</a> */}
       <br />
       <Link href="/sh">
         <a>sh</a>
