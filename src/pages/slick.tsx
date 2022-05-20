@@ -69,6 +69,8 @@ const Home: NextPage = () => {
 
   const onClickSlide = (id: number) => {
     setCurrent(id);
+    pagingSlickRef.current.slickGoTo(id - 1, true);
+    // slickGoTo
   };
 
   return (
@@ -107,13 +109,20 @@ const Home: NextPage = () => {
           // swipeEvent={(e) => {
           //   console.log(e);
           // }}
+          afterChange={(e) => {
+            console.log("after => ", e);
+          }}
+          beforeChange={(e) => {
+            console.log("before => ", e);
+            pagingSlickRef.current.slickGoTo(e, true);
+          }}
         >
           <div>
             <div
               style={{
                 background: "green",
                 height: "100px",
-                fontSize: current === 1 ? "5rem" : "",
+                fontSize: current === 1 ? "5rem" : "1rem",
               }}
               onClick={() => onClickSlide(1)}
             >
@@ -126,7 +135,7 @@ const Home: NextPage = () => {
               style={{
                 background: "red",
                 height: "100px",
-                fontSize: current === 2 ? "5rem" : "",
+                fontSize: current === 2 ? "5rem" : "1rem",
               }}
               onClick={() => onClickSlide(2)}
             >
@@ -138,7 +147,7 @@ const Home: NextPage = () => {
               style={{
                 background: "blue",
                 height: "100px",
-                fontSize: current === 3 ? "5rem" : "",
+                fontSize: current === 3 ? "5rem" : "1rem",
               }}
               onClick={() => onClickSlide(3)}
             >
@@ -150,7 +159,7 @@ const Home: NextPage = () => {
               style={{
                 background: "pink",
                 height: "100px",
-                fontSize: current === 4 ? "5rem" : "",
+                fontSize: current === 4 ? "5rem" : "1rem",
               }}
               onClick={() => onClickSlide(4)}
             >
@@ -162,7 +171,7 @@ const Home: NextPage = () => {
               style={{
                 background: "yellow",
                 height: "100px",
-                fontSize: current === 5 ? "5rem" : "",
+                fontSize: current === 5 ? "5rem" : "1rem",
               }}
               onClick={() => onClickSlide(5)}
             >
@@ -174,7 +183,7 @@ const Home: NextPage = () => {
               style={{
                 background: "gray",
                 height: "100px",
-                fontSize: current === 6 ? "5rem" : "",
+                fontSize: current === 6 ? "5rem" : "1rem",
               }}
               onClick={() => onClickSlide(6)}
             >
@@ -186,7 +195,7 @@ const Home: NextPage = () => {
               style={{
                 background: "green",
                 height: "100px",
-                fontSize: current === 7 ? "5rem" : "",
+                fontSize: current === 7 ? "5rem" : "1rem",
               }}
               onClick={() => onClickSlide(7)}
             >
@@ -198,7 +207,7 @@ const Home: NextPage = () => {
               style={{
                 background: "red",
                 height: "100px",
-                fontSize: current === 8 ? "5rem" : "",
+                fontSize: current === 8 ? "5rem" : "1rem",
               }}
               onClick={() => onClickSlide(8)}
             >
@@ -210,7 +219,7 @@ const Home: NextPage = () => {
               style={{
                 background: "blue",
                 height: "100px",
-                fontSize: current === 9 ? "5rem" : "",
+                fontSize: current === 9 ? "5rem" : "1rem",
               }}
               onClick={() => onClickSlide(9)}
             >
@@ -222,7 +231,7 @@ const Home: NextPage = () => {
               style={{
                 background: "pink",
                 height: "100px",
-                fontSize: current === 10 ? "5rem" : "",
+                fontSize: current === 10 ? "5rem" : "1rem",
               }}
               onClick={() => onClickSlide(10)}
             >
@@ -234,7 +243,7 @@ const Home: NextPage = () => {
               style={{
                 background: "yellow",
                 height: "100px",
-                fontSize: current === 11 ? "5rem" : "",
+                fontSize: current === 11 ? "5rem" : "1rem",
               }}
               onClick={() => onClickSlide(11)}
             >
@@ -246,7 +255,7 @@ const Home: NextPage = () => {
               style={{
                 background: "gray",
                 height: "100px",
-                fontSize: current === 12 ? "5rem" : "",
+                fontSize: current === 12 ? "5rem" : "1rem",
               }}
               onClick={() => onClickSlide(12)}
             >
@@ -256,7 +265,16 @@ const Home: NextPage = () => {
         </Slider>
       </div>
       <div style={{ backgroundColor: "#efefef", marginTop: "100px" }}>
-        <Slider ref={pagingSlickRef} asNavFor={mainSlick} {...pagingSettings}>
+        <Slider
+          ref={pagingSlickRef}
+          asNavFor={mainSlick}
+          {...pagingSettings}
+          onSwipe={(e) => {
+            console.log(e);
+            if (e === "left") setCurrent(current + 1);
+            else if (e === "right") setCurrent(current - 1);
+          }}
+        >
           <div>
             <div
               style={{ background: "green", height: "500px", margin: "50px" }}
