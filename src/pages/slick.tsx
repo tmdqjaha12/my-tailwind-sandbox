@@ -114,7 +114,7 @@ const Home: NextPage = () => {
           }}
           beforeChange={(e) => {
             console.log("before => ", e);
-            pagingSlickRef.current.slickGoTo(e, true);
+            // pagingSlickRef.current.slickGoTo(e, true);
           }}
         >
           <div>
