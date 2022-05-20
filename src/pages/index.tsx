@@ -19,8 +19,8 @@ const Home: NextPage = () => {
 
       {/* <a href="/sh">sh</a> */}
       <br />
-      <Link href="/sh">
-        <a>sh</a>
+      <Link href="/slick">
+        <a>slick</a>
       </Link>
     </>
   );

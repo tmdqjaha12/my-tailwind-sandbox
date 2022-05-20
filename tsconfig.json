@@ -25,9 +25,9 @@
       "@components/*": ["src/components/*"],
       "@pages/*": ["src/pages/*"],
       "@libs/*": ["src/libs/*"],
-      "@md/*": ["src/md/*"],
-      "@styles/*": ["src/styles/*"],
-      "@utils/*": ["src/utils/*"]
+      // "@md/*": ["src/md/*"],
+      "@styles/*": ["public/styles/*"]
+      // "@utils/*": ["src/utils/*"]
     },
     // "typeRoots": [
     //   "./node_modules/@types/",
