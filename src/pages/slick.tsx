@@ -7,9 +7,12 @@ import Slider from "react-slick";
 const Home: NextPage = () => {
   const [settings, setSettings] = useState({
     // dots: true, // 지정 콘텐츠 이동 버튼
+    className: "slicks",
     focusOnSelect: true,
+    centerMode: true,
     infinite: false, // 끝으로 갔을 때 첫 번째로 제자리
     speed: 500, // 콘텐츠 넘기는 속도 ms단위 (1000ms = 1초)
+    centerPadding: "60px",
     slidesToShow: 3, // 한 화면이 보이는 콘텐츠 개수
     slidesToScroll: 1, // 한 번에 넘어가는 콘텐츠 개수
     // initialSlide: 0, // 초기 위치
