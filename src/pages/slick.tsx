@@ -15,6 +15,8 @@ const Home: NextPage = () => {
     // initialSlide: 0, // 초기 위치
   });
 
+  console.log(1);
+
   return (
     <>
       <Head>
