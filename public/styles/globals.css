@@ -24,3 +24,7 @@ a {
 button.test-btn {
   color: green;
 }
+
+.slick-list {
+  margin: 0 -50px;
+}

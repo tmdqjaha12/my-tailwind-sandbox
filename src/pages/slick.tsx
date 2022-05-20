@@ -1,22 +1,64 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Slider from "react-slick";
 
 const Home: NextPage = () => {
-  const [settings, setSettings] = useState({
-    // dots: true, // 지정 콘텐츠 이동 버튼
-    className: "slicks",
+  // const [settings1, setSettings1] = useState({
+  //   // dots: true, // 지정 콘텐츠 이동 버튼
+  //   className: "slicks",
+  //   focusOnSelect: true,
+  //   centerMode: true,
+  //   infinite: false, // 끝으로 갔을 때 첫 번째로 제자리
+  //   speed: 500, // 콘텐츠 넘기는 속도 ms단위 (1000ms = 1초)
+  //   // centerPadding: "60px",
+  //   slidesToShow: 3, // 한 화면이 보이는 콘텐츠 개수
+  //   slidesToScroll: 1, // 한 번에 넘어가는 콘텐츠 개수
+  //   initialSlide: 0, // 초기 위치
+  //   // variableWidth: true
+  // });
+
+  const [mainSlick, setMainSlick] = useState(undefined);
+  const [pagingSlick, setPagingSlick] = useState(undefined);
+  const mainSlickRef = useRef<any>(null);
+  const pagingSlickRef = useRef<any>(null);
+  useEffect(() => {
+    setMainSlick(mainSlickRef.current);
+    setPagingSlick(pagingSlickRef.current);
+  }, []);
+  const mainSettings = {
+    className: "main-slick",
     focusOnSelect: true,
+    dots: false,
+    arrows: false,
+    infinite: false,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+    swipeToSlide: true,
+    speed: 500,
+    initialSlide: 0,
+  };
+  const pagingSettings = {
+    className: "page-slick",
+    dots: false,
+    arrows: false,
     centerMode: true,
-    infinite: false, // 끝으로 갔을 때 첫 번째로 제자리
-    speed: 500, // 콘텐츠 넘기는 속도 ms단위 (1000ms = 1초)
-    centerPadding: "60px",
-    slidesToShow: 3, // 한 화면이 보이는 콘텐츠 개수
-    slidesToScroll: 1, // 한 번에 넘어가는 콘텐츠 개수
-    // initialSlide: 0, // 초기 위치
-  });
+    slidesToShow: 1,
+    infinite: false,
+    swipeToSlide: true,
+    speed: 500,
+    initialSlide: 0,
+    // focusOnSelect: true,
+  };
+  const onClickPrev = useCallback(
+    (ref: any) => () => ref.current.slickPrev(),
+    []
+  );
+  const onClickNext = useCallback(
+    (ref: any) => () => ref.current.slickNext(),
+    []
+  );
 
   console.log(1);
 
@@ -49,24 +91,47 @@ const Home: NextPage = () => {
       <div style={{ backgroundColor: "#efefef" }}>
         <h2>FocusOnSelect</h2>
         <div>Click on any slide to select and make it current slide</div>
-        <Slider {...settings}>
+        <Slider ref={mainSlickRef} asNavFor={pagingSlick} {...mainSettings}>
           <div>
-            <h3 style={{ background: "green" }}>1</h3>
+            <div style={{ background: "green", height: "100px" }}>1</div>
+            {/* <h3 style={{ background: "green" }}>1</h3> */}
           </div>
           <div>
-            <h3 style={{ background: "red" }}>2</h3>
+            <h3 style={{ background: "red", height: "100px" }}>2</h3>
           </div>
           <div>
-            <h3 style={{ background: "blue" }}>3</h3>
+            <h3 style={{ background: "blue", height: "100px" }}>3</h3>
           </div>
           <div>
-            <h3 style={{ background: "pink" }}>4</h3>
+            <h3 style={{ background: "pink", height: "100px" }}>4</h3>
           </div>
           <div>
-            <h3 style={{ background: "yellow" }}>5</h3>
+            <h3 style={{ background: "yellow", height: "100px" }}>5</h3>
           </div>
           <div>
-            <h3 style={{ background: "gray" }}>6</h3>
+            <h3 style={{ background: "gray", height: "100px" }}>6</h3>
+          </div>
+        </Slider>
+      </div>
+      <div style={{ backgroundColor: "#efefef", marginTop: "100px" }}>
+        <Slider ref={pagingSlickRef} asNavFor={mainSlick} {...pagingSettings}>
+          <div>
+            <h3 style={{ background: "green", height: "500px" }}>1</h3>
+          </div>
+          <div>
+            <h3 style={{ background: "red", height: "500px" }}>2</h3>
+          </div>
+          <div>
+            <h3 style={{ background: "blue", height: "500px" }}>3</h3>
+          </div>
+          <div>
+            <h3 style={{ background: "pink", height: "500px" }}>4</h3>
+          </div>
+          <div>
+            <h3 style={{ background: "yellow", height: "500px" }}>5</h3>
+          </div>
+          <div>
+            <h3 style={{ background: "gray", height: "500px" }}>6</h3>
           </div>
         </Slider>
       </div>
