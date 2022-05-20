@@ -121,6 +121,24 @@ const Home: NextPage = () => {
           <div>
             <h3 style={{ background: "gray", height: "100px" }}>6</h3>
           </div>
+          <div>
+            <div style={{ background: "green", height: "100px" }}>7</div>
+          </div>
+          <div>
+            <h3 style={{ background: "red", height: "100px" }}>8</h3>
+          </div>
+          <div>
+            <h3 style={{ background: "blue", height: "100px" }}>9</h3>
+          </div>
+          <div>
+            <h3 style={{ background: "pink", height: "100px" }}>10</h3>
+          </div>
+          <div>
+            <h3 style={{ background: "yellow", height: "100px" }}>11</h3>
+          </div>
+          <div>
+            <h3 style={{ background: "gray", height: "100px" }}>12</h3>
+          </div>
         </Slider>
       </div>
       <div style={{ backgroundColor: "#efefef", marginTop: "100px" }}>
@@ -157,6 +175,40 @@ const Home: NextPage = () => {
           <div>
             <h3 style={{ background: "gray", height: "500px", margin: "50px" }}>
               6
+            </h3>
+          </div>
+          <div>
+            <h3
+              style={{ background: "green", height: "500px", margin: "50px" }}
+            >
+              7
+            </h3>
+          </div>
+          <div>
+            <h3 style={{ background: "red", height: "500px", margin: "50px" }}>
+              8
+            </h3>
+          </div>
+          <div>
+            <h3 style={{ background: "blue", height: "500px", margin: "50px" }}>
+              9
+            </h3>
+          </div>
+          <div>
+            <h3 style={{ background: "pink", height: "500px", margin: "50px" }}>
+              10
+            </h3>
+          </div>
+          <div>
+            <h3
+              style={{ background: "yellow", height: "500px", margin: "50px" }}
+            >
+              11
+            </h3>
+          </div>
+          <div>
+            <h3 style={{ background: "gray", height: "500px", margin: "50px" }}>
+              12
             </h3>
           </div>
         </Slider>
