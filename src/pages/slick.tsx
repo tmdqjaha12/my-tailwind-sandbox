@@ -19,6 +19,10 @@ const Home: NextPage = () => {
   //   // variableWidth: true
   // });
 
+  const [current, setCurrent] = useState(1);
+  // const [currentMain, setCurrentMain] = useState(0);
+  // const [currentPage, setCurrentPage] = useState(0);
+
   const [mainSlick, setMainSlick] = useState(undefined);
   const [pagingSlick, setPagingSlick] = useState(undefined);
   const mainSlickRef = useRef<any>(null);
@@ -63,7 +67,9 @@ const Home: NextPage = () => {
     []
   );
 
-  console.log(1);
+  const onClickSlide = (id: number) => {
+    setCurrent(id);
+  };
 
   return (
     <>
@@ -96,120 +102,240 @@ const Home: NextPage = () => {
         <div>Click on any slide to select and make it current slide</div>
         <Slider
           ref={mainSlickRef}
-          asNavFor={pagingSlick}
+          // asNavFor={pagingSlick}
           {...mainSettings}
           // swipeEvent={(e) => {
           //   console.log(e);
           // }}
         >
           <div>
-            <div style={{ background: "green", height: "100px" }}>1</div>
-            {/* <h3 style={{ background: "green" }}>1</h3> */}
+            <div
+              style={{
+                background: "green",
+                height: "100px",
+                fontSize: current === 1 ? "5rem" : "",
+              }}
+              onClick={() => onClickSlide(1)}
+            >
+              1
+            </div>
+            {/* <div style={{ background: "green" }}>1</div> */}
           </div>
           <div>
-            <h3 style={{ background: "red", height: "100px" }}>2</h3>
+            <div
+              style={{
+                background: "red",
+                height: "100px",
+                fontSize: current === 2 ? "5rem" : "",
+              }}
+              onClick={() => onClickSlide(2)}
+            >
+              2
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "blue", height: "100px" }}>3</h3>
+            <div
+              style={{
+                background: "blue",
+                height: "100px",
+                fontSize: current === 3 ? "5rem" : "",
+              }}
+              onClick={() => onClickSlide(3)}
+            >
+              3
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "pink", height: "100px" }}>4</h3>
+            <div
+              style={{
+                background: "pink",
+                height: "100px",
+                fontSize: current === 4 ? "5rem" : "",
+              }}
+              onClick={() => onClickSlide(4)}
+            >
+              4
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "yellow", height: "100px" }}>5</h3>
+            <div
+              style={{
+                background: "yellow",
+                height: "100px",
+                fontSize: current === 5 ? "5rem" : "",
+              }}
+              onClick={() => onClickSlide(5)}
+            >
+              5
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "gray", height: "100px" }}>6</h3>
+            <div
+              style={{
+                background: "gray",
+                height: "100px",
+                fontSize: current === 6 ? "5rem" : "",
+              }}
+              onClick={() => onClickSlide(6)}
+            >
+              6
+            </div>
           </div>
           <div>
-            <div style={{ background: "green", height: "100px" }}>7</div>
+            <div
+              style={{
+                background: "green",
+                height: "100px",
+                fontSize: current === 7 ? "5rem" : "",
+              }}
+              onClick={() => onClickSlide(7)}
+            >
+              7
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "red", height: "100px" }}>8</h3>
+            <div
+              style={{
+                background: "red",
+                height: "100px",
+                fontSize: current === 8 ? "5rem" : "",
+              }}
+              onClick={() => onClickSlide(8)}
+            >
+              8
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "blue", height: "100px" }}>9</h3>
+            <div
+              style={{
+                background: "blue",
+                height: "100px",
+                fontSize: current === 9 ? "5rem" : "",
+              }}
+              onClick={() => onClickSlide(9)}
+            >
+              9
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "pink", height: "100px" }}>10</h3>
+            <div
+              style={{
+                background: "pink",
+                height: "100px",
+                fontSize: current === 10 ? "5rem" : "",
+              }}
+              onClick={() => onClickSlide(10)}
+            >
+              10
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "yellow", height: "100px" }}>11</h3>
+            <div
+              style={{
+                background: "yellow",
+                height: "100px",
+                fontSize: current === 11 ? "5rem" : "",
+              }}
+              onClick={() => onClickSlide(11)}
+            >
+              11
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "gray", height: "100px" }}>12</h3>
+            <div
+              style={{
+                background: "gray",
+                height: "100px",
+                fontSize: current === 12 ? "5rem" : "",
+              }}
+              onClick={() => onClickSlide(12)}
+            >
+              12
+            </div>
           </div>
         </Slider>
       </div>
       <div style={{ backgroundColor: "#efefef", marginTop: "100px" }}>
         <Slider ref={pagingSlickRef} asNavFor={mainSlick} {...pagingSettings}>
           <div>
-            <h3
+            <div
               style={{ background: "green", height: "500px", margin: "50px" }}
             >
               1
-            </h3>
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "red", height: "500px", margin: "50px" }}>
+            <div style={{ background: "red", height: "500px", margin: "50px" }}>
               2
-            </h3>
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "blue", height: "500px", margin: "50px" }}>
+            <div
+              style={{ background: "blue", height: "500px", margin: "50px" }}
+            >
               3
-            </h3>
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "pink", height: "500px", margin: "50px" }}>
+            <div
+              style={{ background: "pink", height: "500px", margin: "50px" }}
+            >
               4
-            </h3>
+            </div>
           </div>
           <div>
-            <h3
+            <div
               style={{ background: "yellow", height: "500px", margin: "50px" }}
             >
               5
-            </h3>
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "gray", height: "500px", margin: "50px" }}>
+            <div
+              style={{ background: "gray", height: "500px", margin: "50px" }}
+            >
               6
-            </h3>
+            </div>
           </div>
           <div>
-            <h3
+            <div
               style={{ background: "green", height: "500px", margin: "50px" }}
             >
               7
-            </h3>
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "red", height: "500px", margin: "50px" }}>
+            <div style={{ background: "red", height: "500px", margin: "50px" }}>
               8
-            </h3>
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "blue", height: "500px", margin: "50px" }}>
+            <div
+              style={{ background: "blue", height: "500px", margin: "50px" }}
+            >
               9
-            </h3>
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "pink", height: "500px", margin: "50px" }}>
+            <div
+              style={{ background: "pink", height: "500px", margin: "50px" }}
+            >
               10
-            </h3>
+            </div>
           </div>
           <div>
-            <h3
+            <div
               style={{ background: "yellow", height: "500px", margin: "50px" }}
             >
               11
-            </h3>
+            </div>
           </div>
           <div>
-            <h3 style={{ background: "gray", height: "500px", margin: "50px" }}>
+            <div
+              style={{ background: "gray", height: "500px", margin: "50px" }}
+            >
               12
-            </h3>
+            </div>
           </div>
         </Slider>
       </div>
