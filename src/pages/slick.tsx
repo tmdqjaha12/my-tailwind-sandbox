@@ -29,23 +29,26 @@ const Home: NextPage = () => {
   }, []);
   const mainSettings = {
     className: "main-slick",
-    focusOnSelect: true,
     dots: false,
     arrows: false,
     infinite: false,
+    // centerMode: true,
     slidesToShow: 5,
-    slidesToScroll: 1,
+    // slidesToScroll: 1,
     swipeToSlide: true,
     speed: 500,
     initialSlide: 0,
+    focusOnSelect: true,
+    // touchMove: true,
   };
   const pagingSettings = {
     className: "page-slick",
     dots: false,
     arrows: false,
+    infinite: false,
     centerMode: true,
     slidesToShow: 1,
-    infinite: false,
+    // slidesToScroll: 1,
     swipeToSlide: true,
     speed: 500,
     initialSlide: 0,
@@ -91,7 +94,14 @@ const Home: NextPage = () => {
       <div style={{ backgroundColor: "#efefef" }}>
         <h2>FocusOnSelect</h2>
         <div>Click on any slide to select and make it current slide</div>
-        <Slider ref={mainSlickRef} asNavFor={pagingSlick} {...mainSettings}>
+        <Slider
+          ref={mainSlickRef}
+          asNavFor={pagingSlick}
+          {...mainSettings}
+          // swipeEvent={(e) => {
+          //   console.log(e);
+          // }}
+        >
           <div>
             <div style={{ background: "green", height: "100px" }}>1</div>
             {/* <h3 style={{ background: "green" }}>1</h3> */}
@@ -116,22 +126,38 @@ const Home: NextPage = () => {
       <div style={{ backgroundColor: "#efefef", marginTop: "100px" }}>
         <Slider ref={pagingSlickRef} asNavFor={mainSlick} {...pagingSettings}>
           <div>
-            <h3 style={{ background: "green", height: "500px" }}>1</h3>
+            <h3
+              style={{ background: "green", height: "500px", margin: "50px" }}
+            >
+              1
+            </h3>
           </div>
           <div>
-            <h3 style={{ background: "red", height: "500px" }}>2</h3>
+            <h3 style={{ background: "red", height: "500px", margin: "50px" }}>
+              2
+            </h3>
           </div>
           <div>
-            <h3 style={{ background: "blue", height: "500px" }}>3</h3>
+            <h3 style={{ background: "blue", height: "500px", margin: "50px" }}>
+              3
+            </h3>
           </div>
           <div>
-            <h3 style={{ background: "pink", height: "500px" }}>4</h3>
+            <h3 style={{ background: "pink", height: "500px", margin: "50px" }}>
+              4
+            </h3>
           </div>
           <div>
-            <h3 style={{ background: "yellow", height: "500px" }}>5</h3>
+            <h3
+              style={{ background: "yellow", height: "500px", margin: "50px" }}
+            >
+              5
+            </h3>
           </div>
           <div>
-            <h3 style={{ background: "gray", height: "500px" }}>6</h3>
+            <h3 style={{ background: "gray", height: "500px", margin: "50px" }}>
+              6
+            </h3>
           </div>
         </Slider>
       </div>

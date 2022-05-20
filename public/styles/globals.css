@@ -21,10 +21,38 @@ a {
   box-sizing: border-box;
 } */
 
+/* *,
+:after,
+:before {
+  box-sizing: inherit;
+}
+
+div {
+  display: block;
+} */
+
 .button.test-btn {
   color: green;
 }
 
+/* @media (max-width: 768px) {
+  .slick-arrow {
+    display: none !important;
+  }
+} */
+
 .page-slick .slick-list {
-  margin: 0 -50px;
+  /* margin: 0 -50px; */
 }
+.page-slick .slick-slide {
+  /* margin: 0 50px; */
+}
+
+.slick-slider {
+  /* margin: 30px auto 50px !important; */
+  /* overflow: hidden !important; */
+}
+
+/* .page-slick {
+  padding: 50px;
+} */
