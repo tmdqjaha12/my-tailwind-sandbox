@@ -21,10 +21,10 @@ a {
   box-sizing: border-box;
 } */
 
-button.test-btn {
+.button.test-btn {
   color: green;
 }
 
-.slick-list {
+.page-slick .slick-list {
   margin: 0 -50px;
 }
