@@ -30,6 +30,10 @@ const Home: NextPage = () => {
       {/* <Link href="/mouseTracking2">
         <a>mouseTracking2</a>
       </Link> */}
+      <Link href="/hideTopbar">
+        <a>hideTopbar</a>
+      </Link>
+      <br />
     </>
   );
 };
