@@ -34,6 +34,18 @@ const Home: NextPage = () => {
         <a>hideTopbar</a>
       </Link>
       <br />
+      <Link href="/popupmodal">
+        <a>popupmodal</a>
+      </Link>
+      <br />
+      <Link href="/hideLeftBar">
+        <a>hideLeftBar</a>
+      </Link>
+      <br />
+      <Link href="/webCam">
+        <a>webCam</a>
+      </Link>
+      <br />
     </>
   );
 };

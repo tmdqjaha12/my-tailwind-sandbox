@@ -27,11 +27,6 @@ const HideTopbar = () => {
 
   return (
     <>
-      <div>
-        <Link href={"/"}>
-          <a>뒤로가기</a>
-        </Link>
-      </div>
       <div className="container">
         <nav id="navbar">
           <h1>NAVBAR</h1>
@@ -39,6 +34,11 @@ const HideTopbar = () => {
       </div>
       <footer>
         <h3>End of the Page</h3>
+        <div>
+          <Link href={"/"}>
+            <a>뒤로가기</a>
+          </Link>
+        </div>
       </footer>
     </>
   );

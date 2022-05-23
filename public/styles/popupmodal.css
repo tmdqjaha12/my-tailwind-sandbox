@@ -1,0 +1,40 @@
+#popupmodal #modal-1 {
+  display: none;
+  /*default display set to none*/
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  padding: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  font-family: Monospace;
+  text-align: center;
+  background-color: #ffffff3f;
+  backdrop-filter: blur(5px);
+}
+
+/*Other Styling stuffs*/
+
+/* #popupmodal {
+  background: url("https://images.unsplash.com/photo-1519681393784-d120267933ba?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80")
+    no-repeat center center fixed;
+} */
+
+#popupmodal button {
+  background: green;
+  border: 0;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 0.7em;
+  cursor: pointer;
+}
+#popupmodal #click {
+  font-size: 0.9em;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

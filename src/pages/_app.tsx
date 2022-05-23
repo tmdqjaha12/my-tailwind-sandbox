@@ -5,8 +5,11 @@ import { Router } from "next/router";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import "public/styles/globals.css";
+import "public/styles/hideLeftbar.css";
 import "public/styles/hideTopbar.css";
 import "public/styles/mouseTracker.css";
+import "public/styles/popupmodal.css";
+import "public/styles/webCam.css";
 
 /**
  * 페이지 이동 감지
