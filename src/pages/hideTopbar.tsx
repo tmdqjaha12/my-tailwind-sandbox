@@ -26,8 +26,8 @@ const HideTopbar = () => {
   }, []);
 
   return (
-    <>
-      <div className="container">
+    <div id="#top-bar">
+      <div className="containers">
         <nav id="navbar">
           <h1>NAVBAR</h1>
         </nav>
@@ -40,7 +40,7 @@ const HideTopbar = () => {
           </Link>
         </div>
       </footer>
-    </>
+    </div>
   );
 };
 

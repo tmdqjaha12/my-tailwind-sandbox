@@ -20,7 +20,7 @@ const HideLeftBar = () => {
   }, []);
   return (
     <>
-      <div>
+      <div id="left-bar">
         <div>
           <Link href={"/"}>
             <a className="text-white">뒤로가기</a>

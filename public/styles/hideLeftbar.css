@@ -1,4 +1,4 @@
-#sidebar {
+#left-bar #sidebar {
   position: fixed;
   top: 0;
   left: -206px;
@@ -20,17 +20,17 @@
 Rest of styling stuff is your choice
 */
 
-#sidebar ul {
+#left-bar #sidebar ul {
   position: relative;
   margin-top: 50px;
 }
-#sidebar ul li {
+#left-bar #sidebar ul li {
   font-size: 2em;
   margin-bottom: 30px;
   font-family: monospace;
 }
 
-#close {
+#left-bar #close {
   display: none;
   position: fixed;
   cursor: pointer;
@@ -38,7 +38,7 @@ Rest of styling stuff is your choice
   right: 10px;
   font-size: 1.2em;
 }
-#open {
+#left-bar #open {
   display: block;
   position: fixed;
   cursor: pointer;

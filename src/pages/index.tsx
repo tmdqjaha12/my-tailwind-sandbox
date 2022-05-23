@@ -11,11 +11,11 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className="bg-gray-400 text-red-400">알에스팀1!</h1>
+      <h1 className="bg-gray-400 text-red-400">Practice!</h1>
       <div>
         <button className="test-btn">테스트 버튼</button>
       </div>
-      <h1 className="bg-gray-400 text-yellow-200">알에스팀2!</h1>
+      <h1 className="bg-gray-400 text-yellow-200">하승범!</h1>
 
       {/* <a href="/sh">sh</a> */}
       <br />
@@ -44,6 +44,10 @@ const Home: NextPage = () => {
       <br />
       <Link href="/webCam">
         <a>webCam</a>
+      </Link>
+      <br />
+      <Link href="/sectionScroll">
+        <a>sectionScroll</a>
       </Link>
       <br />
     </>

@@ -10,6 +10,7 @@ import "public/styles/hideTopbar.css";
 import "public/styles/mouseTracker.css";
 import "public/styles/popupmodal.css";
 import "public/styles/webCam.css";
+import "public/styles/sectionScroll.css";
 
 /**
  * 페이지 이동 감지

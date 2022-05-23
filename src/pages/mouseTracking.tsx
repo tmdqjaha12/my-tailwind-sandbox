@@ -22,7 +22,7 @@ const MouseTracking = () => {
   }, []);
 
   return (
-    <>
+    <div id="mouse-tracker ">
       <div>
         <Link href="/">
           <a>뒤로가기</a>
@@ -37,7 +37,7 @@ const MouseTracking = () => {
       <div id="eye">
         <div id="eyeBall"></div>
       </div>
-    </>
+    </div>
   );
 };
 
