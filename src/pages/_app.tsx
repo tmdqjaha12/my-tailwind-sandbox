@@ -5,6 +5,7 @@ import { Router } from "next/router";
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import "public/styles/globals.css";
+import "public/styles/mouseTracker.css";
 
 /**
  * 페이지 이동 감지

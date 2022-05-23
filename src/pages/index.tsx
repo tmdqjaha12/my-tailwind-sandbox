@@ -22,6 +22,14 @@ const Home: NextPage = () => {
       <Link href="/slick">
         <a>slick</a>
       </Link>
+      <br />
+      <Link href="/mouseTracking">
+        <a>mouseTracking1</a>
+      </Link>
+      <br />
+      {/* <Link href="/mouseTracking2">
+        <a>mouseTracking2</a>
+      </Link> */}
     </>
   );
 };
