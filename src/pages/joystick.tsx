@@ -1,110 +1,97 @@
+import Head from "next/head";
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import Script from "next/script";
+
+interface StickData {
+  xPosition: number;
+  yPosition: number;
+  cardinalDirection: string;
+  x: number;
+  y: number;
+}
 
 const Joystick = () => {
   useEffect(() => {
-    const joy: any = document.getElementById("joy");
-    joy.width = 200;
-    joy.height = 200;
+    var joy1IinputPosX: any = document.getElementById("joy1PosizioneX");
+    var joy1InputPosY: any = document.getElementById("joy1PosizioneY");
+    var joy1Direzione: any = document.getElementById("joy1Direzione");
+    var joy1X: any = document.getElementById("joy1X");
+    var joy1Y: any = document.getElementById("joy1Y");
 
-    let startX: any, startY: any, moveX: any, moveY: any;
-    const joyPos = joy.getBoundingClientRect();
-    let onTouch = false;
-    const down = (event: any) => {
-      try {
-        startX = Math.round(event.touches[0].clientX - joyPos.left);
-        startY = Math.round(event.touches[0].clientY - joyPos.Top);
-      } catch {
-        startX = Math.round(event.clientX - joyPos.left);
-        startY = Math.round(event.clientY - joyPos.top);
-      }
-      onTouch = true;
-    };
+    // var Joy1 = new window.JoyStick("joy1Div", {}, () => {});
+    var Joy1 = new window.JoyStick("joy1Div", {}, function (
+      stickData: StickData
+    ) {
+      joy1IinputPosX.value = stickData.xPosition;
+      joy1InputPosY.value = stickData.yPosition;
+      joy1Direzione.value = stickData.cardinalDirection;
+      joy1X.value = stickData.x;
+      joy1Y.value = stickData.y;
+    });
 
-    let moveMax = 40;
-    let msgPrev = "s";
-    let msg = "s";
-    const move = (event: any) => {
-      if (onTouch) {
-        try {
-          moveX = Math.round(event.touches[0].clientX - joyPos.left) - startX;
-          moveY = Math.round(event.touches[0].clientY - joyPos.top) - startY;
-        } catch {
-          moveX = Math.round(event.clientX - joyPos.left) - startX;
-          moveY = Math.round(event.clientY - joyPos.top) - startY;
-        }
+    setInterval(function () {
+      joy1IinputPosX.value = Joy1.GetPosX();
+    }, 50);
+    setInterval(function () {
+      joy1InputPosY.value = Joy1.GetPosY();
+    }, 50);
+    setInterval(function () {
+      joy1Direzione.value = Joy1.GetDir();
+    }, 50);
+    setInterval(function () {
+      joy1X.value = Joy1.GetX();
+    }, 50);
+    setInterval(function () {
+      joy1Y.value = Joy1.GetY();
+    }, 50);
 
-        if (moveX > moveMax) moveX = moveMax;
-        else if (moveX < -moveMax) moveX = -moveMax;
-        if (moveY > moveMax) moveY = moveMax;
-        else if (moveY < -moveMax) moveY = -moveMax;
-
-        clearBackground();
-        drawCircle(100 + moveX, 100 + moveY, 50, "white");
-        // drawCircle(100 + moveX, 100 + moveY, 50, "rgb(255,000,051)");
-
-        if (moveX >= 40) msg = "d";
-        else if (moveX <= -40) msg = "a";
-        else if (moveY <= -40) msg = "w";
-        else if (moveY >= 40) msg = "x";
-
-        if (msg != msgPrev) {
-          send(msg);
-          msgPrev = msg;
-        }
-      }
-    };
-
-    const up = () => {
-      clearBackground();
-      drawCircle(100, 100, 50, "rgb(255,000,051)");
-      msg = "s";
-      msgPrev = "s";
-      onTouch = false;
-      send(msg);
-    };
-
-    const send = (msg: any) => {
-      console.log(msg);
-    };
-
-    const clearBackground = () => {
-      ctx.clearRect(0, 0, joy.width, joy.height);
-      ctx.beginPath();
-      ctx.strokeStyle = "rgb(153,000,051)";
-      ctx.arc(100, 100, 90, 0, 2 * Math.PI);
-      ctx.stroke();
-    };
-
-    const drawCircle = (x: any, y: any, r: any, c: any) => {
-      ctx.beginPath();
-      ctx.fillStyle = c;
-      ctx.arc(x, y, r, 0, 2 * Math.PI);
-      ctx.fill();
-    };
-
-    joy.addEventListener("touchstart", down);
-    joy.addEventListener("touchmove", move);
-    joy.addEventListener("touchend", up);
-    joy.addEventListener("mousedown", down);
-    joy.addEventListener("mousemove", move);
-    joy.addEventListener("mouseup", up);
-    const ctx = joy.getContext("2d");
-    ctx.lineWidth = 10;
-    clearBackground();
-    drawCircle(100, 100, 50, "rgb(255, 000, 051");
+    // const script = document.createElement("script");
+    // script.type = "text/javascript";
+    // script.src = "/js/joy.js";
+    // document.body.appendChild(script);
+    // console.log(window.JoyStick);
   }, []);
+
+  useEffect(() => {
+    // console.log(window.JoyStick);
+  });
 
   return (
     <>
+      <Head>
+        {/* <script type="text/javascript" src="/js/joy.js" async></script> */}
+      </Head>
+
+      <Script src="/js/joy.js" strategy="beforeInteractive"></Script>
       <div>
         <Link href={"/"}>
           <a className="text-white">뒤로가기</a>
         </Link>
-        <canvas
-          id="joy"
-          className="border-4 border-gray-300 border-dashed"
-        ></canvas>
+        {/* <div>
+          <canvas
+            id="joy"
+            className="border-4 border-dashed border-gray-300 m-auto"
+          ></canvas>
+        </div> */}
+        <div className="columnLateral">
+          <div
+            id="joy1Div"
+            style={{ width: "200px", height: "200px", margin: "50px" }}
+          ></div>
+          Posizione X:
+          <input id="joy1PosizioneX" type="text" />
+          <br />
+          Posizione Y:
+          <input id="joy1PosizioneY" type="text" />
+          <br />
+          Direzione:
+          <input id="joy1Direzione" type="text" />
+          <br />
+          X :<input id="joy1X" type="text" />
+          <br />
+          Y :<input id="joy1Y" type="text" />
+        </div>
       </div>
     </>
   );
