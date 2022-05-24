@@ -13,6 +13,9 @@ interface StickData {
 
 const Joystick = () => {
   useEffect(() => {
+    if (!window.JoyStick) {
+      window.location.reload();
+    }
     var joy1IinputPosX: any = document.getElementById("joy1PosizioneX");
     var joy1InputPosY: any = document.getElementById("joy1PosizioneY");
     var joy1Direzione: any = document.getElementById("joy1Direzione");
