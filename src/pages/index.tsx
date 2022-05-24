@@ -50,6 +50,10 @@ const Home: NextPage = () => {
         <a>sectionScroll</a>
       </Link>
       <br />
+      <Link href="/joystick">
+        <a>joystick</a>
+      </Link>
+      <br />
     </>
   );
 };
