@@ -40,7 +40,8 @@ const Joystick = () => {
         else if (moveY < -moveMax) moveY = -moveMax;
 
         clearBackground();
-        drawCircle(100 + moveX, 100 + moveY, 50, "rgb(255,000,051)");
+        drawCircle(100 + moveX, 100 + moveY, 50, "white");
+        // drawCircle(100 + moveX, 100 + moveY, 50, "rgb(255,000,051)");
 
         if (moveX >= 40) msg = "d";
         else if (moveX <= -40) msg = "a";
