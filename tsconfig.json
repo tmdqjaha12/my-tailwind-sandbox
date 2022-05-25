@@ -26,8 +26,8 @@
       "@pages/*": ["src/pages/*"],
       "@libs/*": ["src/libs/*"],
       // "@md/*": ["src/md/*"],
-      "@styles/*": ["public/styles/*"]
-      // "@utils/*": ["src/utils/*"]
+      "@styles/*": ["public/styles/*"],
+      "@utils/*": ["src/utils/*"]
     },
     // "typeRoots": [
     //   "./node_modules/@types/",
